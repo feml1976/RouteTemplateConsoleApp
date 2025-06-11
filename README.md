@@ -264,3 +264,6 @@ Para soporte técnico o preguntas:
 - 📧 Email: soporte@tudominio.com
 - 🐛 Issues: [GitHub Issues](https://github.com/tuusuario/RouteTemplateConsoleApp/issues)
 - 📚 Wiki: [GitHub Wiki](https://github.com/tuusuario/RouteTemplateConsoleApp/wiki)
+=======
+# RouteTemplateConsoleApp
+# Frotcom Authenticator App  Aplicación de consola asíncrona desarrollada en .NET 9.0 para autenticarse contra el endpoint de Frotcom, obtener un token y guardarlo en un archivo de texto.
