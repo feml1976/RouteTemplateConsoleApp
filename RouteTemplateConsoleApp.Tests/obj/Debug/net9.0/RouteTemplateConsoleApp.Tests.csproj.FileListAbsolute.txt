@@ -1,0 +1,14 @@
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\bin\Debug\net9.0\RouteTemplateConsoleApp.Tests.exe
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\bin\Debug\net9.0\RouteTemplateConsoleApp.Tests.deps.json
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\bin\Debug\net9.0\RouteTemplateConsoleApp.Tests.runtimeconfig.json
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\bin\Debug\net9.0\RouteTemplateConsoleApp.Tests.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\bin\Debug\net9.0\RouteTemplateConsoleApp.Tests.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.AssemblyInfoInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.AssemblyInfo.cs
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.csproj.CoreCompileInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\refint\RouteTemplateConsoleApp.Tests.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.genruntimeconfig.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.Tests.dll

@@ -1,0 +1,15 @@
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\bin\Debug\net9.0\RouteTemplateConsoleApp.Application.deps.json
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\bin\Debug\net9.0\RouteTemplateConsoleApp.Application.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\bin\Debug\net9.0\RouteTemplateConsoleApp.Application.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\bin\Debug\net9.0\RouteTemplateConsoleApp.Core.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\bin\Debug\net9.0\RouteTemplateConsoleApp.Core.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.csproj.AssemblyReference.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.AssemblyInfoInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.AssemblyInfo.cs
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.csproj.CoreCompileInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTem.A8F4FFB1.Up2Date
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\refint\RouteTemplateConsoleApp.Application.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.Application.dll

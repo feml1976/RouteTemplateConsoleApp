@@ -1,0 +1,11 @@
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\bin\Debug\net9.0\RouteTemplateConsoleApp.Core.deps.json
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\bin\Debug\net9.0\RouteTemplateConsoleApp.Core.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\bin\Debug\net9.0\RouteTemplateConsoleApp.Core.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.AssemblyInfoInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.AssemblyInfo.cs
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.csproj.CoreCompileInputs.cache
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\refint\RouteTemplateConsoleApp.Core.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\RouteTemplateConsoleApp.Core.pdb
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Core\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.Core.dll

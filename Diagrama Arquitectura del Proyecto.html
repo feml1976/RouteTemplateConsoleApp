@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RouteTemplateConsoleApp - Arquitectura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .layer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 5px solid #3498db;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .layer-card.core {
+            border-left-color: #e74c3c;
+        }
+
+        .layer-card.infrastructure {
+            border-left-color: #f39c12;
+        }
+
+        .layer-card.application {
+            border-left-color: #2ecc71;
+        }
+
+        .layer-card.console {
+            border-left-color: #9b59b6;
+        }
+
+        .layer-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .layer-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .layer-title h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+
+        .component-list {
+            list-style: none;
+        }
+
+        .component-item {
+            background: #f8f9fa;
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+            transition: all 0.2s ease;
+        }
+
+        .component-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .component-name {
+            font-weight: 600;
+            color: #2c3e50;
+            display: block;
+        }
+
+        .component-desc {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .flow-diagram {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+        }
+
+        .flow-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+
+        .flow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .flow-step {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .flow-step-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .flow-step h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .flow-step p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .flow-arrow {
+            font-size: 2em;
+            color: #3498db;
+            align-self: center;
+        }
+
+        .tech-stack {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .tech-stack h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-steps {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚛 RouteTemplateConsoleApp</h1>
+            <p>Arquitectura por Capas con .NET 9.0 e Inyección de Dependencias</p>
+        </div>
+
+        <div class="architecture-grid">
+            <div class="layer-card console" onclick="showDetails('console')">
+                <div class="layer-title">
+                    <div class="layer-icon">🖥️</div>
+                    <h3>Console App</h3>
+                </div>
+                <ul class="component-list">
+                    <li class="component-item">
+                        <span class="component-name">Program.cs</span>
+                        <span class="component-desc">Punto de entrada y configuración DI</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">appsettings.json</span>
+                        <span class="component-desc">Configuración de la aplicación</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="layer-card application" onclick="showDetails('application')">
+                <div class="layer-title">
+                    <div class="layer-icon">📱</div>
+                    <h3>Application Layer</h3>
+                </div>
+                <ul class="component-list">
+                    <li class="component-item">
+                        <span class="component-name">RouteDisplayService</span>
+                        <span class="component-desc">Servicio de presentación en consola</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">IRouteDisplayService</span>
+                        <span class="component-desc">Contrato de visualización</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="layer-card infrastructure" onclick="showDetails('infrastructure')">
+                <div class="layer-title">
+                    <div class="layer-icon">🔧</div>
+                    <h3>Infrastructure Layer</h3>
+                </div>
+                <ul class="component-list">
+                    <li class="component-item">
+                        <span class="component-name">FrotcomApiClient</span>
+                        <span class="component-desc">Cliente HTTP para API externa</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">RouteTemplateService</span>
+                        <span class="component-desc">Lógica de negocio</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">ApiConfiguration</span>
+                        <span class="component-desc">Configuración de API</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="layer-card core" onclick="showDetails('core')">
+                <div class="layer-title">
+                    <div class="layer-icon">🏗️</div>
+                    <h3>Core Layer</h3>
+                </div>
+                <ul class="component-list">
+                    <li class="component-item">
+                        <span class="component-name">RouteTemplate</span>
+                        <span class="component-desc">Entidad principal del dominio</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">Step, Location, TimeInfo</span>
+                        <span class="component-desc">Modelos de datos</span>
+                    </li>
+                    <li class="component-item">
+                        <span class="component-name">Interfaces</span>
+                        <span class="component-desc">Contratos del dominio</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flow-diagram">
+            <h3 class="flow-title">🔄 Flujo de Ejecución</h3>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-step-icon">🚀</div>
+                    <h4>Inicio</h4>
+                    <p>Program.cs configura DI y servicios</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">🌐</div>
+                    <h4>API Call</h4>
+                    <p>FrotcomApiClient consume la API</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">⚙️</div>
+                    <h4>Procesamiento</h4>
+                    <p>RouteTemplateService procesa datos</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">📺</div>
+                    <h4>Visualización</h4>
+                    <p>RouteDisplayService muestra en consola</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h3>🛠️ Stack Tecnológico</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🔷</div>
+                    <h4>.NET 9.0</h4>
+                    <p>Framework principal</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔌</div>
+                    <h4>Dependency Injection</h4>
+                    <p>Microsoft.Extensions.DI</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🌐</div>
+                    <h4>HttpClient</h4>
+                    <p>Cliente HTTP con factory</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📝</div>
+                    <h4>Structured Logging</h4>
+                    <p>Microsoft.Extensions.Logging</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚙️</div>
+                    <h4>Configuration</h4>
+                    <p>appsettings.json + Environment</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📊</div>
+                    <h4>System.Text.Json</h4>
+                    <p>Serialización JSON</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <div class="stat-label">Capas de Arquitectura</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">11</span>
+                <div class="stat-label">Clases Principales</div
