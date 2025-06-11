@@ -75,6 +75,9 @@ namespace RouteTemplateConsoleApp
                     services.Configure<ApiConfiguration>(
                         context.Configuration.GetSection("FrotcomApi"));
 
+                    services.Configure<AuthenticationSettings>(
+                        context.Configuration.GetSection("AuthenticationSettings"));
+
                     // HttpClient
                     services.AddHttpClient<IApiClient, FrotcomApiClient>();
 

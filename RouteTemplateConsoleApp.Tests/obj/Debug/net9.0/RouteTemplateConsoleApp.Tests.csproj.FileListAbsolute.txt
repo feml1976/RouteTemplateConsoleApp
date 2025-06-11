@@ -12,3 +12,4 @@ C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.T
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.pdb
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.genruntimeconfig.cache
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.Tests.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Tests\obj\Debug\net9.0\RouteTemplateConsoleApp.Tests.sourcelink.json

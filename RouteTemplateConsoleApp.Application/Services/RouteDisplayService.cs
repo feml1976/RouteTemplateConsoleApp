@@ -39,8 +39,23 @@ namespace RouteTemplateConsoleApp.Application.Services
         {
             try
             {
+                Console.Clear();
                 Console.WriteLine("╔══════════════════════════════════════════════════════════════╗");
-                Console.WriteLine("║                    PLANTILLAS DE RUTAS                      ║");
+                Console.WriteLine("║                            AUTHORIZE                         ║");
+                Console.WriteLine("╚══════════════════════════════════════════════════════════════╝");
+                Console.WriteLine();
+
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al mostrar las plantillas de rutas");
+                Console.WriteLine($"❌ Error al obtener las plantillas de rutas: {ex.Message}");
+            }
+            try
+            {
+                Console.WriteLine("╔══════════════════════════════════════════════════════════════╗");
+                Console.WriteLine("║                    PLANTILLAS DE RUTAS                       ║");
                 Console.WriteLine("╚══════════════════════════════════════════════════════════════╝");
                 Console.WriteLine();
 
@@ -53,7 +68,7 @@ namespace RouteTemplateConsoleApp.Application.Services
                     Console.WriteLine("⚠️  No se encontraron plantillas de rutas.");
                     return;
                 }
-
+                Console.Clear();
                 for (int i = 0; i < routeTemplates.Count; i++)
                 {
                     Console.WriteLine($"🚛 RUTA {i + 1} de {routeTemplates.Count}");

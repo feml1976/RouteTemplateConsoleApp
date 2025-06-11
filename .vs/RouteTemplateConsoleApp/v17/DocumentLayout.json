@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{47277C49-532F-4E5C-B9B7-BFDA6629FF46}|RouteTemplateConsoleApp.Application\\RouteTemplateConsoleApp.Application.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp.application\\services\\routedisplayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47277C49-532F-4E5C-B9B7-BFDA6629FF46}|RouteTemplateConsoleApp.Application\\RouteTemplateConsoleApp.Application.csproj|solutionrelative:routetemplateconsoleapp.application\\services\\routedisplayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp.infrastructure\\services\\routetemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|solutionrelative:routetemplateconsoleapp.infrastructure\\services\\routetemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp.infrastructure\\services\\frotcomapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|solutionrelative:routetemplateconsoleapp.infrastructure\\services\\frotcomapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60E70ECE-0718-4BB5-9794-444109582706}|RouteTemplateConsoleApp\\RouteTemplateConsoleApp.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60E70ECE-0718-4BB5-9794-444109582706}|RouteTemplateConsoleApp\\RouteTemplateConsoleApp.csproj|solutionrelative:routetemplateconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C64DB890-3701-4F39-AA9F-EA8DAE1545BA}|RouteTemplateConsoleApp.Core\\RouteTemplateConsoleApp.Core.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp.core\\models\\frotcomauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C64DB890-3701-4F39-AA9F-EA8DAE1545BA}|RouteTemplateConsoleApp.Core\\RouteTemplateConsoleApp.Core.csproj|solutionrelative:routetemplateconsoleapp.core\\models\\frotcomauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|c:\\dirsop\\developments\\sources\\routetemplateconsoleapp\\routetemplateconsoleapp.infrastructure\\configuration\\apiconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B75628F-28BF-4A31-9321-7FD84104F36B}|RouteTemplateConsoleApp.Infrastructure\\RouteTemplateConsoleApp.Infrastructure.csproj|solutionrelative:routetemplateconsoleapp.infrastructure\\configuration\\apiconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RouteDisplayService.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Application\\Services\\RouteDisplayService.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp.Application\\Services\\RouteDisplayService.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Application\\Services\\RouteDisplayService.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp.Application\\Services\\RouteDisplayService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAMwE8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T18:56:35.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RouteTemplateService.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Services\\RouteTemplateService.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp.Infrastructure\\Services\\RouteTemplateService.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Services\\RouteTemplateService.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp.Infrastructure\\Services\\RouteTemplateService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAMwDUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T18:56:35.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrotcomApiClient.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Services\\FrotcomApiClient.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp.Infrastructure\\Services\\FrotcomApiClient.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Services\\FrotcomApiClient.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp.Infrastructure\\Services\\FrotcomApiClient.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAMwGgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T18:53:52.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp\\Program.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp\\Program.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAWwDUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T18:51:16.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrotcomAuthentication.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Core\\Models\\FrotcomAuthentication.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp.Core\\Models\\FrotcomAuthentication.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Core\\Models\\FrotcomAuthentication.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp.Core\\Models\\FrotcomAuthentication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T19:18:05.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApiConfiguration.cs",
+              "DocumentMoniker": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Configuration\\ApiConfiguration.cs",
+              "RelativeDocumentMoniker": "RouteTemplateConsoleApp.Infrastructure\\Configuration\\ApiConfiguration.cs",
+              "ToolTip": "C:\\DirSop\\Developments\\sources\\RouteTemplateConsoleApp\\RouteTemplateConsoleApp.Infrastructure\\Configuration\\ApiConfiguration.cs",
+              "RelativeToolTip": "RouteTemplateConsoleApp.Infrastructure\\Configuration\\ApiConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T18:51:23.345Z",
+              "EditorCaption": ""
             }
           ]
         }

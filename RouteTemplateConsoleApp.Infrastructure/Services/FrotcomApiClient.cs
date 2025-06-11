@@ -6,6 +6,7 @@ using RouteTemplateConsoleApp.Infrastructure.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
         private readonly HttpClient _httpClient;
         private readonly ILogger<FrotcomApiClient> _logger;
         private readonly ApiConfiguration _apiConfig;
+        private readonly AuthenticationSettings _apiKey;
+
 
         /// <summary>
         /// Constructor del cliente de API
@@ -30,13 +33,15 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
         public FrotcomApiClient(
             HttpClient httpClient,
             ILogger<FrotcomApiClient> logger,
-            IOptions<ApiConfiguration> apiConfig)
+            IOptions<ApiConfiguration> apiConfig,
+            IOptions<AuthenticationSettings> apiKey)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _apiConfig = apiConfig?.Value ?? throw new ArgumentNullException(nameof(apiConfig));
 
             _httpClient.Timeout = TimeSpan.FromSeconds(_apiConfig.TimeoutSeconds);
+            _apiKey = apiKey?.Value ?? throw new ArgumentNullException(nameof(apiConfig));
         }
 
         /// <summary>
@@ -51,7 +56,9 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
             {
                 _logger.LogInformation("Iniciando solicitud a la API de Frotcom");
 
-                var url = $"{_apiConfig.BaseUrl}?api_key={_apiConfig.ApiKey}";
+                var token = await GetToken(_apiKey);
+                //var url = $"{_apiConfig.BaseUrl}?api_key={_apiConfig.ApiKey}";
+                var url = $"{_apiConfig.BaseUrl}?api_key={token.token}";
                 var response = await _httpClient.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -94,6 +101,34 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
             {
                 _logger.LogError(ex, "Error inesperado al obtener plantillas de rutas");
                 throw;
+            }
+        }
+
+        private async Task<FrotcomAuthentication> GetToken(AuthenticationSettings apiKey)
+        {
+            // Serializar el objeto a JSON  
+            var json = JsonSerializer.Serialize(apiKey);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            try
+            {
+                // Hacer la petición POST  
+                var response = await _httpClient.PostAsync(apiKey.BaseUrl, content);
+
+                // Verificar si la respuesta es exitosa  
+                response.EnsureSuccessStatusCode();
+
+                // Leer la respuesta  
+                var responseJson = await response.Content.ReadAsStringAsync();
+
+                // Deserializar a la clase  
+                var token = JsonSerializer.Deserialize<FrotcomAuthentication>(responseJson);
+
+                return token ?? new FrotcomAuthentication();
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+                return new FrotcomAuthentication();
             }
         }
     }

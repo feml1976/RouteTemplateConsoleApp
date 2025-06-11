@@ -13,3 +13,4 @@ C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.A
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\refint\RouteTemplateConsoleApp.Application.dll
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.pdb
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.Application.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp.Application\obj\Debug\net9.0\RouteTemplateConsoleApp.Application.sourcelink.json
