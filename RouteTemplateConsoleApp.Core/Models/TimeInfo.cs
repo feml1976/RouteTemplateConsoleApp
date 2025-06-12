@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 // RouteTemplateConsoleApp.Core/Models/TimeInfo.cs
@@ -15,16 +16,19 @@ namespace RouteTemplateConsoleApp.Core.Models
         /// <summary>
         /// Distancia en metros del segmento
         /// </summary>
+        [JsonPropertyName("mileage")]
         public double Mileage { get; set; }
 
         /// <summary>
         /// Duración en segundos del segmento
         /// </summary>
+        [JsonPropertyName("duration")] 
         public int Duration { get; set; }
 
         /// <summary>
         /// Tiempo de descanso en segundos (opcional)
         /// </summary>
+        [JsonPropertyName("breaks")] 
         public int? Breaks { get; set; }
     }
 }

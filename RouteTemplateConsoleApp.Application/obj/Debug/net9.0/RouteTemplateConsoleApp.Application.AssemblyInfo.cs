@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteTemplateConsoleApp.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81c7dc67ee6064c548e68585ebae5dbbef09e74b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57517e3282c91852baf345e91ef8c5dccd8f193a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteTemplateConsoleApp.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteTemplateConsoleApp.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

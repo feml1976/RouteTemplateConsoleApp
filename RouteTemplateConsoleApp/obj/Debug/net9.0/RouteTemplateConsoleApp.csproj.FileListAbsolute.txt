@@ -53,3 +53,5 @@ C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\o
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\obj\Debug\net9.0\ref\RouteTemplateConsoleApp.dll
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\bin\Debug\net9.0\appsettings.json
 C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\obj\Debug\net9.0\RouteTemplateConsoleApp.sourcelink.json
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\bin\Debug\net9.0\Dapper.dll
+C:\DirSop\Developments\sources\RouteTemplateConsoleApp\RouteTemplateConsoleApp\bin\Debug\net9.0\Npgsql.dll

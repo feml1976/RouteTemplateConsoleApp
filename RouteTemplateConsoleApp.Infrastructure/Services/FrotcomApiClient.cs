@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RouteTemplateConsoleApp.Infrastructure.Services
@@ -23,6 +24,7 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
         private readonly ApiConfiguration _apiConfig;
         private readonly AuthenticationSettings _apiKey;
 
+        private readonly IRouteRepository _routeRepository;
 
         /// <summary>
         /// Constructor del cliente de API
@@ -34,7 +36,8 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
             HttpClient httpClient,
             ILogger<FrotcomApiClient> logger,
             IOptions<ApiConfiguration> apiConfig,
-            IOptions<AuthenticationSettings> apiKey)
+            IOptions<AuthenticationSettings> apiKey,
+            IRouteRepository routeRepository)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -42,6 +45,7 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
 
             _httpClient.Timeout = TimeSpan.FromSeconds(_apiConfig.TimeoutSeconds);
             _apiKey = apiKey?.Value ?? throw new ArgumentNullException(nameof(apiConfig));
+            _routeRepository = routeRepository;
         }
 
         /// <summary>
@@ -84,6 +88,8 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
                     return new List<RouteTemplate>();
                 }
 
+                var addRecords = await AddRecords(jsonContent);
+
                 _logger.LogInformation("Se obtuvieron {Count} plantillas de rutas exitosamente", routeTemplates.Count);
                 return routeTemplates;
             }
@@ -102,6 +108,83 @@ namespace RouteTemplateConsoleApp.Infrastructure.Services
                 _logger.LogError(ex, "Error inesperado al obtener plantillas de rutas");
                 throw;
             }
+        }
+
+        private async Task<string> AddRecords(string jsonContent, CancellationToken cancellationToken = default)
+        {
+            _logger.LogInformation("Respuesta de API recibida. Tamaño: {Size} caracteres", jsonContent.Length);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var routes = JsonSerializer.Deserialize<List<RouteTemplate>>(jsonContent, options);
+
+            if (routes == null || !routes.Any())
+            {
+                _logger.LogWarning("No se encontraron rutas en la respuesta de la API");
+                return "No se encontraron rutas en la respuesta de la API";
+            }
+
+            _logger.LogInformation("Deserialización exitosa. {Count} rutas encontradas", routes.Count);
+
+            var routesToInsert = new List<GetRouteWithStep>();
+
+            foreach (var template in routes)
+            {
+                var routeWithStep = MapToGetRouteWithStep(template);
+                routesToInsert.Add(routeWithStep);
+            }
+
+            _logger.LogInformation("Mapeando {Count} rutas para inserción", routesToInsert.Count);
+
+            var insertResult = await _routeRepository.InsertRoutesAsync(routesToInsert, cancellationToken);
+
+            if (insertResult)
+            {
+                _logger.LogInformation("Procesamiento completado exitosamente. {Count} rutas insertadas", routesToInsert.Count);
+            }
+            else
+            {
+                _logger.LogError("Error al insertar las rutas en la base de datos");
+            }
+
+            return "Registros Almacenados";
+        }
+
+        private GetRouteWithStep MapToGetRouteWithStep(RouteTemplate template)
+        {
+            // Calcular Metros (sumatoria de mileage)
+            var totalMetros = template.Steps?.Sum(s => s.Times?.Mileage ?? 0) ?? 0;
+
+            // Calcular Segundos (sumatoria de duration)
+            var totalSegundos = template.Steps?.Sum(s => s.Times?.Duration ?? 0) ?? 0;
+
+            // Serializar Steps como JSON
+            var stepsJson = template.Steps != null && template.Steps.Any()
+                ? JsonSerializer.Serialize(template.Steps, new JsonSerializerOptions { WriteIndented = false })
+                : "[]";
+
+            var now = DateTime.UtcNow;
+
+            return new GetRouteWithStep
+            {
+                RouteId = template.Id,
+                Name = template.Name,
+                NumberOfLegs = template.NumberOfLegs,
+                DeparturePlace = template.DeparturePlace,
+                ArrivalPlace = template.ArrivalPlace,
+                Code = template.Code,
+                TimeStamp = template.Timestamp,
+                UserName = template.Username,
+                Metros = totalMetros,
+                Segundos = totalSegundos,
+                Steps = stepsJson,
+                State = 1,
+                CreateAt = now,
+                UpdateAt = now
+            };
         }
 
         private async Task<FrotcomAuthentication> GetToken(AuthenticationSettings apiKey)

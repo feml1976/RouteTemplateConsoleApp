@@ -267,3 +267,43 @@ Para soporte técnico o preguntas:
 =======
 # RouteTemplateConsoleApp
 # Frotcom Authenticator App  Aplicación de consola asíncrona desarrollada en .NET 9.0 para autenticarse contra el endpoint de Frotcom, obtener un token y guardarlo en un archivo de texto.
+
+
+
+# Crear tabla GetRouteWithStep en PostgreSQL
+CREATE TABLE GetRouteWithStep (
+    Id BIGSERIAL PRIMARY KEY,
+    RouteId NUMERIC NOT NULL,
+    Name VARCHAR(255),
+    NumberOfLegs INTEGER,
+    DeparturePlace VARCHAR(255),
+    ArrivalPlace VARCHAR(255),
+    Code VARCHAR(50),
+    TimeStamp TIMESTAMP,
+    UserName VARCHAR(100),
+    Metros INTEGER,
+    Segundos INTEGER,
+    Steps JSONB,
+    State INTEGER DEFAULT 1,
+    CreateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdateAt  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+# Crear índices para mejorar el rendimiento
+CREATE INDEX idx_getroutewithstep_routeid ON GetRouteWithStep(RouteId);
+CREATE INDEX idx_getroutewithstep_username ON GetRouteWithStep(UserName);
+CREATE INDEX idx_getroutewithstep_createat ON GetRouteWithStep(CreateAt);
+
+# Crear trigger para actualizar automáticamente UpdateAt
+CREATE OR REPLACE FUNCTION update_updateat_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.UpdateAt = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_update_updateat
+    BEFORE UPDATE ON GetRouteWithStep
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updateat_column();

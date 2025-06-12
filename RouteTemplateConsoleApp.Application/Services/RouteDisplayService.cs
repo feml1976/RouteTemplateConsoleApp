@@ -2,11 +2,6 @@
 using RouteTemplateConsoleApp.Application.Interfaces;
 using RouteTemplateConsoleApp.Core.Interfaces;
 using RouteTemplateConsoleApp.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RouteTemplateConsoleApp.Application.Services
 {
@@ -17,7 +12,7 @@ namespace RouteTemplateConsoleApp.Application.Services
     {
         private readonly IRouteTemplateService _routeTemplateService;
         private readonly ILogger<RouteDisplayService> _logger;
-
+        
         /// <summary>
         /// Constructor del servicio de visualización
         /// </summary>
@@ -29,6 +24,7 @@ namespace RouteTemplateConsoleApp.Application.Services
         {
             _routeTemplateService = routeTemplateService ?? throw new ArgumentNullException(nameof(routeTemplateService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            
         }
 
         /// <summary>
@@ -37,21 +33,6 @@ namespace RouteTemplateConsoleApp.Application.Services
         /// <returns>Tarea asíncrona</returns>
         public async Task DisplayAllRouteTemplatesAsync()
         {
-            try
-            {
-                Console.Clear();
-                Console.WriteLine("╔══════════════════════════════════════════════════════════════╗");
-                Console.WriteLine("║                            AUTHORIZE                         ║");
-                Console.WriteLine("╚══════════════════════════════════════════════════════════════╝");
-                Console.WriteLine();
-
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error al mostrar las plantillas de rutas");
-                Console.WriteLine($"❌ Error al obtener las plantillas de rutas: {ex.Message}");
-            }
             try
             {
                 Console.WriteLine("╔══════════════════════════════════════════════════════════════╗");
@@ -69,12 +50,15 @@ namespace RouteTemplateConsoleApp.Application.Services
                     return;
                 }
                 Console.Clear();
+                
                 for (int i = 0; i < routeTemplates.Count; i++)
                 {
                     Console.WriteLine($"🚛 RUTA {i + 1} de {routeTemplates.Count}");
                     Console.WriteLine(new string('─', 80));
                     DisplayRouteTemplate(routeTemplates[i]);
-                    Console.WriteLine();
+                    Console.WriteLine("Presiona cualquier tecla para continuar....");
+                    //Console.ReadKey(true);
+                    //Console.Clear();
                 }
 
                 DisplaySummary(routeTemplates);
@@ -100,8 +84,25 @@ namespace RouteTemplateConsoleApp.Application.Services
                 return;
             }
 
+
             var totalDistance = _routeTemplateService.CalculateTotalDistance(routeTemplate);
+            var totalDuration = _routeTemplateService.CalculateTotalDuration(routeTemplate);
             var formattedDuration = _routeTemplateService.FormatDuration(routeTemplate.Duration);
+
+            GetRouteWithStep getRouteWithStep = new GetRouteWithStep()
+            {
+                RouteId = routeTemplate.Id,
+                Name = routeTemplate.Name,
+                NumberOfLegs = routeTemplate.NumberOfLegs,
+                DeparturePlace = routeTemplate.DeparturePlace,
+                ArrivalPlace = routeTemplate.ArrivalPlace,
+                Code = routeTemplate.Code,
+                TimeStamp = routeTemplate.Timestamp,
+                UserName = routeTemplate.Username,
+                Metros = totalDistance,
+                Segundos = totalDuration,
+                Steps = routeTemplate.Steps.ToString()
+            };
 
             Console.WriteLine($"📋 ID: {routeTemplate.Id}");
             Console.WriteLine($"🏷️  Nombre: {routeTemplate.Name}");
@@ -113,9 +114,11 @@ namespace RouteTemplateConsoleApp.Application.Services
             Console.WriteLine($"🔢 Número de Segmentos: {routeTemplate.NumberOfLegs}");
             Console.WriteLine($"👤 Usuario: {routeTemplate.Username}");
             Console.WriteLine($"📅 Fecha: {routeTemplate.Timestamp:yyyy-MM-dd HH:mm:ss}");
-
+            
+            
             if (routeTemplate.Steps?.Any() == true)
             {
+                getRouteWithStep.NumberOfLegs = routeTemplate.Steps.Count;
                 Console.WriteLine($"📋 SEGMENTOS DE LA RUTA:");
                 for (int i = 0; i < routeTemplate.Steps.Count; i++)
                 {
@@ -133,6 +136,7 @@ namespace RouteTemplateConsoleApp.Application.Services
                     }
                 }
             }
+            
         }
 
         /// <summary>

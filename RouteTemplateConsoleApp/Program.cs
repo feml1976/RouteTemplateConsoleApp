@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 using RouteTemplateConsoleApp.Application.Interfaces;
 using RouteTemplateConsoleApp.Application.Services;
 using RouteTemplateConsoleApp.Core.Interfaces;
+using RouteTemplateConsoleApp.Core.Interfaces.RouteTemplateConsoleApp.Core.Interfaces.Data;
+using RouteTemplateConsoleApp.Core.Services;
 using RouteTemplateConsoleApp.Infrastructure.Configuration;
 using RouteTemplateConsoleApp.Infrastructure.Services;
 
@@ -81,9 +83,22 @@ namespace RouteTemplateConsoleApp
                     // HttpClient
                     services.AddHttpClient<IApiClient, FrotcomApiClient>();
 
+                    // Factory de conexiones
+                    services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
+
                     // Servicios de infraestructura
                     services.AddScoped<IApiClient, FrotcomApiClient>();
                     services.AddScoped<IRouteTemplateService, RouteTemplateService>();
+
+                    services.AddScoped<IRouteProcessingService, RouteProcessingService>();
+                    services.AddScoped<IRouteRepository, RouteRepository>();
+
+                    // HttpClient con configuración
+                    services.AddHttpClient<RouteTemplateService>(client =>
+                    {
+                        client.Timeout = TimeSpan.FromMinutes(5);
+                        client.DefaultRequestHeaders.Add("User-Agent", "RouteTemplateConsoleApp/1.0");
+                    });
 
                     // Servicios de aplicación
                     services.AddScoped<IRouteDisplayService, RouteDisplayService>();

@@ -40,6 +40,9 @@
       "RouteTemplateConsoleApp.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+        },
         "compile": {
           "bin/placeholder/RouteTemplateConsoleApp.Core.dll": {}
         },
